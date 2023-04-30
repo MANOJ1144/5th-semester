@@ -8,6 +8,12 @@ const reviewSchema = new mongoose.Schema({
     }
 })
 
+reviewSchema.set('toJSON', {
+    transform: (document, returnedDocument) => {
+        returnedDocument.id = document._id.toString()
+        delete returnedDocument._id
+    }
+})
 
 const  bookSchema = new mongoose.Schema({
     title:{
@@ -22,5 +28,13 @@ const  bookSchema = new mongoose.Schema({
 
 
 }, {timestamps: true})
+
+bookSchema.set('toJSON', {
+    transform: (document, returnedDocument) => {
+        returnedDocument.id = document._id.toString()
+        delete returnedDocument._id
+        delete returnedDocument.__V
+    }
+})
 
 module.exports = mongoose.model('Book', bookSchema)

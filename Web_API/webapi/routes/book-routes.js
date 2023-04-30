@@ -5,25 +5,25 @@ const Book = require('../models/Book')
 const router = express.Router()
 
 router.route('/')
-.get((req,res)=> {
-    Book.find()
-    .then((book) => res.json(books))
-    .catch(err => console.log(err))
-})
-.post((req,res) => {
-    Book.create(req.body)
-        .then((book)=> res.status(201).json(book))
+    .get((req,res)=> {
+        Book.find()
+        .then((book) => res.json(books))
         .catch(err => console.log(err))
     })
+    .post((req,res) => {
+        Book.create(req.body)
+            .then((book)=> res.status(201).json(book))
+            .catch(err => console.log(err))
+        })
 
-.put((req, res) => {
-    res.status(405).json({ error: "Put request is not allowed" })
-})
-.delete((req,res) => {
-    Book.deleteMany()
-        .then(reply => res.json(reply))
-        .catch(err => console.log(err))
-})
+    .put((req, res) => {
+        res.status(405).json({ error: "Put request is not allowed" })
+    })
+    .delete((req,res) => {
+        Book.deleteMany()
+            .then(reply => res.json(reply))
+            .catch(err => console.log(err))
+    })
 
 
 router.route('/:book_id')
