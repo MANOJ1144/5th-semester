@@ -36,7 +36,7 @@ router.route('/')
         // // } catch {
         // //     console.log(err);
         // // }
-        bookController.getAllbooks
+        bookController.getAllBooks
     )
 
     .post(
@@ -58,7 +58,7 @@ router.route('/')
         // // .catch(err => console.log(err))
         // .catch(next)
 
-        bookController.createbook
+        bookController.createBook
     )
 
     .put((req, res) => {
@@ -70,7 +70,7 @@ router.route('/')
         //     .then(reply => res.json(reply))
         //     // .catch(err => console.log(err))
         //     .catch(next)
-        bookController.deleteAllbooks
+        bookController.deleteAllBooks
     )
     
 router.route('/:book_id')
@@ -90,7 +90,7 @@ router.route('/:book_id')
         //     })
         // // .catch(err => console.log(err))
         // .catch(next)
-        bookController.getAbook
+        bookController.getBookById
     )
 
     .post((req, res) => {
@@ -114,7 +114,7 @@ router.route('/:book_id')
         // .then(updated => res.json(updated))
         // // .catch(err => console.log(err))
         // .catch(next)
-        bookController.updateAbook
+        bookController.updateBookById
     )
 
     .delete(
@@ -128,7 +128,7 @@ router.route('/:book_id')
         //     .then(reply => res.status(204).end())
         //     // .catch(err => console.log(err))
         //     .catch(next)
-        bookController.deleteAbook
+        bookController.deleteBookById
     );
 
 router.route('/:book_id/reviews')
@@ -147,25 +147,25 @@ router.route('/:book_id/reviews')
     })
 
     .delete(
-        reviewController.deleteReview
+        reviewController.deleteAllReviews
     )
       
 router.route('/:book_id/reviews/:review_id')
 
-    .get((req, res, next) => {
-        reviewController.createReview
+    .get((req, res) => {
+        reviewController.getReviewById
     })
 
     .put((req, res, next) => {
-        reviewController.deleteAreview    
+        reviewController.updateReviewById    
     })
 
-    .post((req, res, next) => {
+    .post((req, res) => {
         res.status(405).json({error: 'This method (POST) is not allowed'})
     })
 
     .delete(
-        reviewController.deleteAreview
+        reviewController.deleteReviewById
     )
 
 module.exports = router
