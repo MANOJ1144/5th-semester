@@ -50,6 +50,13 @@ class _ArithmeticViewState extends State<ArithmeticView> {
         int.parse(secondController.text),
       );
     });
+    
+    // 2023/05/03
+    Navigator.pushNamed(
+      context,
+      '/outputRoute',
+      arguments: result,
+    );
   }
 
   final myKey = GlobalKey<FormState>();
