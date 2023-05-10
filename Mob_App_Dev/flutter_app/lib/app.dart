@@ -6,8 +6,11 @@ import 'package:flutter_app/view/dashboard_view.dart';
 import 'package:flutter_app/view/display_name_view.dart';
 import 'package:flutter_app/view/icons_view.dart';
 import 'package:flutter_app/view/load_image_view.dart';
+import 'package:flutter_app/view/media_query_view.dart';
 import 'package:flutter_app/view/output_view.dart';
 import 'package:flutter_app/view/rich_text_view.dart';
+
+import 'view/class_exercise_view.dart';
 // import 'package:flutter_app/view/si_view.dart';
 
 class App extends StatelessWidget {
@@ -29,6 +32,8 @@ class App extends StatelessWidget {
         '/outputRoute': (context) => const OutputView(),
         '/containerRoute': (context) => const ContainerView(),
         '/loadImageRoute': (context) => const LoadImageView(),
+         "/MediaQueryRoute": (context) => const MediaQueryView(),
+        "/ClassExerciseRoute": (context) => const ClassExerciseView(),
       },
     );
   }

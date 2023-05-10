@@ -73,6 +73,7 @@ class DashboardView extends StatelessWidget {
               },
               child: const Text('Container'),
             ),
+            
             const SizedBox(height: 8),
             ElevatedButton(
               onPressed: () {
@@ -80,6 +81,30 @@ class DashboardView extends StatelessWidget {
               },
               child: const Text('LoadImage'),
             ),
+
+          const SizedBox(height: 8),
+
+          SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/MediaQueryRoute");
+                  },
+                  child: const Text('container'),
+                ),
+              ),
+                          const SizedBox(height: 8),
+
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/ClassExerciseRoute");
+                  },
+                  child: const Text('Exercise'),
+                ),
+              ),
+        
           ],
         ),
       ),
